@@ -52,14 +52,22 @@ header{border-bottom:1px solid var(--rule);background:var(--bg)}
 .nav a:hover,.nav a:focus-visible{color:var(--accent)}
 
 /* Hero */
-.hero{padding-block:clamp(48px,8vw,96px) clamp(36px,5vw,64px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,5vw,64px);align-items:end}
+.hero{padding-block:clamp(40px,6vw,80px) clamp(28px,4vw,48px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,5vw,64px);align-items:center}
+.hero-photo{margin:0;justify-self:end;width:100%;max-width:380px}
+.hero-photo img{display:block;width:100%;max-width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;border:1px solid var(--rule)}
+.hero-photo figcaption{margin-top:10px;font-size:13.5px;color:var(--ink-2)}
+.hero-photo figcaption strong{display:block;font-family:var(--font-display);font-weight:700;color:var(--ink);font-size:15px}
+.kpis-strip{padding-bottom:clamp(36px,5vw,64px)}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:clamp(28px,4vw,44px)}
+.compare .kpi .v{font-size:clamp(28px,3.4vw,40px)}
+.compare .kpi .l{font-weight:600;color:var(--ink-2)}
 .hero h1{font-size:clamp(36px,5.6vw,62px);font-weight:800;letter-spacing:-.025em;margin-top:14px}
 .hero h1 em{font-style:normal;color:var(--accent)}
 .hero .lead{font-size:clamp(17px,1.6vw,20px);color:var(--ink-2);max-width:34em;margin-top:22px}
 .cta{display:inline-flex;align-items:center;gap:10px;margin-top:30px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:13px 20px;border-radius:4px;font-size:15px}
 .cta:hover{filter:brightness(1.08)}
 .cta:focus-visible{outline:3px solid var(--accent-soft);outline-offset:2px}
-.kpis{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
 .kpi{background:var(--surface);padding:18px 20px}
 .kpi .l{font-size:13px;color:var(--ink-3)}
 .kpi .v{font-family:var(--font-display);font-weight:700;font-size:clamp(26px,3vw,34px);letter-spacing:-.02em;margin-top:4px;line-height:1.05}
@@ -144,7 +152,8 @@ footer{border-top:1px solid var(--rule);padding-block:28px 40px;font-size:13px;c
 footer p+p{margin-top:8px}
 
 @media (max-width:860px){
-  .hero,.sec-head,.case,.contact{grid-template-columns:1fr}
+  .hero,.sec-head,.case,.contact,.kpis{grid-template-columns:1fr}
+  .hero-photo{justify-self:start;max-width:320px}
   .case-meta{border-right:0;border-bottom:1px solid var(--rule)}
   .services{grid-template-columns:1fr}
   .service{border-right:0;margin-right:0;border-bottom:1px solid var(--rule);padding-right:0}
@@ -152,7 +161,7 @@ footer p+p{margin-top:8px}
   .steps,.totals{grid-template-columns:1fr 1fr}
 }
 @media (max-width:480px){
-  .steps,.totals,.facts{grid-template-columns:1fr}
+  .steps,.totals,.facts,.compare{grid-template-columns:1fr}
   .nav ul{gap:14px;font-size:14px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -164,7 +173,7 @@ footer p+p{margin-top:8px}
   <div class="wrap nav">
     <div class="brand">Carlos González Palau <span>·</span> Inversión Inmobiliaria</div>
     <ul>
-      <li><a href="#servicios">Qué hago</a></li>
+      <li><a href="#como-funciona">Cómo funciona</a></li>
       <li><a href="#operaciones">Operaciones</a></li>
       <li><a href="#metodo">Método</a></li>
       <li><a href="#contacto">Contacto</a></li>
@@ -175,11 +184,17 @@ footer p+p{margin-top:8px}
 <main>
   <div class="wrap hero">
     <div>
-      <p class="eyebrow">Compra, reforma y venta de vivienda</p>
-      <h1>Operaciones inmobiliarias de <em>alta rentabilidad</em>, con los números sobre la mesa.</h1>
-      <p class="lead">Invierto mi propio capital en inmuebles que el mercado no quiere mirar: situaciones complicadas, precios bajos y plazos cortos. Ahora acompaño a otros inversores a hacer lo mismo, desde la búsqueda hasta la escritura de venta.</p>
-      <a class="cta" href="#contacto">Hablemos de tu próxima operación</a>
+      <p class="eyebrow">Inversión inmobiliaria desde 2.000 €</p>
+      <h1>Invierte desde 2.000 € en operaciones inmobiliarias de <em>alta rentabilidad</em>.</h1>
+      <p class="lead">Soy Carlos González Palau. Compro, reformo y vendo viviendas con mi propio dinero, y ahora abro mis operaciones a quien quiera coinvertir conmigo. Mientras las grandes plataformas ofrecen un 5 % o un 7 % al año, mis dos últimas operaciones han dado un 90 % y un 52 % en menos de un año, antes de impuestos.</p>
+      <a class="cta" href="#contacto">Quiero invertir en la próxima operación</a>
     </div>
+    <figure class="hero-photo">
+      <img src="carlos-gonzalez-palau.jpg" alt="Carlos González Palau" width="720" height="900">
+      <figcaption><strong>Carlos González Palau</strong>Inversor inmobiliario. Compra, reforma y venta de vivienda.</figcaption>
+    </figure>
+  </div>
+  <div class="wrap kpis-strip">
     <div class="kpis" aria-label="Resumen de resultados">
       <div class="kpi"><div class="l">Operaciones cerradas</div><div class="v">2</div><div class="n">Compradas, reformadas y vendidas</div></div>
       <div class="kpi"><div class="l">Beneficio antes de impuestos</div><div class="v acc">73.752 €</div><div class="n">Sobre 113.078 € invertidos</div></div>
@@ -187,25 +202,29 @@ footer p+p{margin-top:8px}
     </div>
   </div>
 
-  <section id="servicios">
+  <section id="como-funciona">
     <div class="wrap">
       <div class="sec-head">
-        <div><p class="eyebrow">Qué hago</p><h2>Te acompaño en toda la operación</h2></div>
-        <p>El dinero en este tipo de operaciones se gana en la compra, no en la venta. Por eso el trabajo empieza mucho antes de firmar: encontrar el inmueble adecuado, entender por qué está barato y saber exactamente cuánto va a costar sacarlo al mercado.</p>
+        <div><p class="eyebrow">Cómo funciona</p><h2>Coinvierte en operaciones reales, desde 2.000 €</h2></div>
+        <p>No es un fondo ni una plataforma. Son operaciones concretas, con dirección, números y plazo. Tú aportas capital, yo pongo el trabajo y también mi propio dinero en cada operación. Si la operación gana, ganamos todos en proporción a lo aportado.</p>
       </div>
       <div class="services">
         <div class="service">
-          <h3>Búsqueda y análisis</h3>
-          <p>Localizo oportunidades con descuento real sobre el precio de mercado, calculo la inversión total (ITP, notaría, registro, reforma, suministros) y la rentabilidad esperada antes de dar un solo paso.</p>
+          <h3>Te presento la operación</h3>
+          <p>Antes de aportar un euro ves el inmueble, el precio de compra, la inversión total con todos los gastos, el precio de venta objetivo y el plazo previsto. Con los mismos números que uso yo para decidir.</p>
         </div>
         <div class="service">
-          <h3>Gestión de la compra y la reforma</h3>
-          <p>Negociación, arras, deudas de comunidad, escritura y coordinación de los oficios. Reformas ajustadas: lo justo para que el inmueble se venda rápido y bien.</p>
+          <h3>Aportas desde 2.000 €</h3>
+          <p>Tu capital entra junto al mío y al de otros inversores, destinado solo a esa operación. Se formaliza por contrato, con tu porcentaje de participación claro desde el principio.</p>
         </div>
         <div class="service">
-          <h3>Venta y cierre</h3>
-          <p>Certificado energético, publicación, visitas y negociación hasta la escritura de venta. Cada operación termina con una hoja de resultados como las que ves abajo.</p>
+          <h3>Vendemos y repartimos</h3>
+          <p>Yo gestiono la compra, la reforma y la venta. Al cerrar, recibes tu capital más tu parte del beneficio y una hoja de resultados como las que ves abajo, con cada euro justificado.</p>
         </div>
+      </div>
+      <div class="compare" aria-label="Comparativa de rentabilidad">
+        <div class="kpi"><div class="l">Grandes plataformas de inversión inmobiliaria</div><div class="v">5 – 7 %</div><div class="n">Rentabilidad anual habitual que ofrecen al pequeño inversor</div></div>
+        <div class="kpi"><div class="l">Mis dos operaciones cerradas</div><div class="v acc">78 % y 180 %</div><div class="n">Rentabilidad anualizada antes de impuestos, con más riesgo y plazos de 6 y 8 meses</div></div>
       </div>
     </div>
   </section>
@@ -357,13 +376,13 @@ footer p+p{margin-top:8px}
     <div class="wrap">
       <div class="sec-head">
         <div><p class="eyebrow">Método</p><h2>Cómo trabajo una operación</h2></div>
-        <p>Cuatro fases, siempre en este orden. La mayoría de las oportunidades se descartan en la segunda: si los números no salen sobre el papel, no salen en la realidad.</p>
+        <p>Cuatro fases, siempre en este orden. La mayoría de las oportunidades se descartan en la segunda: si los números no salen sobre el papel, no salen en la realidad. Solo las que pasan el filtro se abren a inversores.</p>
       </div>
       <div class="steps">
         <div class="step"><div class="num">1</div><h3>Localizar</h3><p>Inmuebles con un motivo claro para estar baratos: deudas, herencias, prisa por vender, estado deficiente.</p></div>
         <div class="step"><div class="num">2</div><h3>Calcular</h3><p>Inversión total con todos los gastos, precio de venta realista y plazo. Si la rentabilidad no compensa el riesgo, se descarta.</p></div>
         <div class="step"><div class="num">3</div><h3>Ejecutar</h3><p>Negociación, arras, escritura y reforma ajustada al objetivo de venta. Sin gastar un euro que no vuelva multiplicado.</p></div>
-        <div class="step"><div class="num">4</div><h3>Vender y cerrar números</h3><p>Salida al mercado en semanas, no en meses. Al cerrar, una hoja de resultados con cada euro justificado.</p></div>
+        <div class="step"><div class="num">4</div><h3>Vender y repartir</h3><p>Salida al mercado en semanas, no en meses. Al cerrar, cada inversor recibe su parte del beneficio y una hoja de resultados con cada euro justificado.</p></div>
       </div>
     </div>
   </section>
@@ -372,16 +391,16 @@ footer p+p{margin-top:8px}
     <div class="wrap contact">
       <div>
         <p class="eyebrow">Contacto</p>
-        <h2>¿Tienes capital y quieres una operación así?</h2>
-        <p>Cuéntame cuánto quieres invertir y en qué zona. Te digo con números si tiene sentido y cómo lo haríamos.</p>
+        <h2>¿Quieres entrar en la próxima operación?</h2>
+        <p>Escríbeme con el importe que quieres invertir, desde 2.000 €. Te aviso de la siguiente operación con todos los números antes de que empiece, y decides.</p>
         <div class="mail">
           <code id="mail-text">mandelojr@gmail.com</code>
           <button type="button" id="copy-btn">Copiar</button>
         </div>
       </div>
       <div class="contact-side">
-        <div class="box"><strong>Para quién es</strong>Inversores particulares que quieren rentabilidades muy por encima del alquiler tradicional y aceptan que una operación así exige dedicación y tolerancia al riesgo.</div>
-        <div class="box"><strong>Qué te llevas</strong>Análisis previo con todos los números, gestión de la operación de principio a fin y una hoja de resultados al cierre, como las de arriba.</div>
+        <div class="box"><strong>Para quién es</strong>Personas que quieren que sus ahorros rindan mucho más que en una plataforma al 5 %, entienden que una rentabilidad alta va unida a un riesgo alto y pueden dejar el capital quieto entre 6 y 12 meses.</div>
+        <div class="box"><strong>Qué te llevas</strong>Los números completos antes de invertir, información durante la operación y, al cierre, tu capital más tu parte del beneficio con la hoja de resultados, como las de arriba.</div>
       </div>
     </div>
   </section>
@@ -390,7 +409,7 @@ footer p+p{margin-top:8px}
 <footer>
   <div class="wrap">
     <p>Rentabilidades calculadas sobre la inversión total (precio de compra más todos los gastos de la operación) y antes de impuestos sobre el beneficio. La rentabilidad anualizada se obtiene de forma simple: rentabilidad de la operación × 12 / meses de duración.</p>
-    <p>Resultados pasados no garantizan resultados futuros. Toda inversión inmobiliaria conlleva riesgo, incluida la posible pérdida del capital invertido.</p>
+    <p>Resultados pasados no garantizan resultados futuros. Toda inversión inmobiliaria conlleva riesgo, incluida la posible pérdida total o parcial del capital invertido. La participación en cada operación se formaliza mediante contrato individual con cada inversor; esta página es informativa y no constituye una oferta pública de inversión.</p>
   </div>
 </footer>
 
