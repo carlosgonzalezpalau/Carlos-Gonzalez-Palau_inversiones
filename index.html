@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Carlos González Palau. Operaciones inmobiliarias de compra, reforma y venta con alta rentabilidad. Resultados reales de dos operaciones cerradas y acompañamiento a inversores.">
+<title>Carlos González Palau · Inversión Inmobiliaria</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: left-aligned editorial column (max 1080px), asymmetric two-column case studies, a thin ledger-style rule system borrowed from a notary's balance sheet. */
+:root{
+  --bg:#f3f5f7;          /* cool off-white, slight blue bias */
+  --surface:#ffffff;
+  --ink:#131b26;
+  --ink-2:#48525f;
+  --ink-3:#7b8491;
+  --rule:#d6dbe2;
+  --accent:#0e6b54;      /* deep desaturated green: profit */
+  --accent-soft:#dcefe7;
+  --cost-1:#8a93a0;      /* cost segments: one neutral ramp */
+  --cost-2:#aab2bd;
+  --cost-3:#c9cfd7;
+  --warm:#b8742a;        /* single warm highlight: eyebrows */
+  --font-display:"Archivo",system-ui,"Segoe UI",Arial,sans-serif;
+  --font-body:"Public Sans",system-ui,"Segoe UI",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f141b;--surface:#171e27;--ink:#eef1f5;--ink-2:#b4bcc7;--ink-3:#7f8894;--rule:#2a333f;
+    --accent:#4fbf9b;--accent-soft:#163a30;--cost-1:#6e7784;--cost-2:#555e6b;--cost-3:#3d4652;--warm:#d9a35a;color-scheme:dark
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f141b;--surface:#171e27;--ink:#eef1f5;--ink-2:#b4bcc7;--ink-3:#7f8894;--rule:#2a333f;
+  --accent:#4fbf9b;--accent-soft:#163a30;--cost-1:#6e7784;--cost-2:#555e6b;--cost-3:#3d4652;--warm:#d9a35a;color-scheme:dark
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;line-height:1.1}
+p{margin:0}
+a{color:inherit}
+.eyebrow{font-family:var(--font-display);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--warm)}
+
+/* Header */
+header{border-bottom:1px solid var(--rule);background:var(--bg)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;flex-wrap:wrap}
+.brand{font-family:var(--font-display);font-weight:800;font-size:18px;letter-spacing:-.01em}
+.brand span{color:var(--accent)}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:15px;color:var(--ink-2)}
+.nav a{text-decoration:none}
+.nav a:hover,.nav a:focus-visible{color:var(--accent)}
+
+/* Hero */
+.hero{padding-block:clamp(48px,8vw,96px) clamp(36px,5vw,64px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,5vw,64px);align-items:end}
+.hero h1{font-size:clamp(36px,5.6vw,62px);font-weight:800;letter-spacing:-.025em;margin-top:14px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{font-size:clamp(17px,1.6vw,20px);color:var(--ink-2);max-width:34em;margin-top:22px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:30px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:13px 20px;border-radius:4px;font-size:15px}
+.cta:hover{filter:brightness(1.08)}
+.cta:focus-visible{outline:3px solid var(--accent-soft);outline-offset:2px}
+.kpis{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.kpi{background:var(--surface);padding:18px 20px}
+.kpi .l{font-size:13px;color:var(--ink-3)}
+.kpi .v{font-family:var(--font-display);font-weight:700;font-size:clamp(26px,3vw,34px);letter-spacing:-.02em;margin-top:4px;line-height:1.05}
+.kpi .v.acc{color:var(--accent)}
+.kpi .n{font-size:12px;color:var(--ink-3);margin-top:6px}
+
+/* Sections */
+section{padding-block:clamp(44px,6vw,80px);border-top:1px solid var(--rule)}
+.sec-head{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(16px,4vw,48px);margin-bottom:clamp(28px,4vw,48px)}
+.sec-head h2{font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-.02em;margin-top:10px}
+.sec-head p{color:var(--ink-2);max-width:38em;align-self:end}
+
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--rule)}
+.service{padding:26px 22px 26px 0;border-right:1px solid var(--rule);margin-right:22px}
+.service:last-child{border-right:0;margin-right:0}
+.service h3{font-size:19px;font-weight:700;margin-bottom:10px}
+.service p{color:var(--ink-2);font-size:15.5px}
+
+/* Case studies */
+.cases{display:grid;gap:clamp(28px,4vw,48px)}
+.case{background:var(--surface);border:1px solid var(--rule);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+.case-meta{padding:clamp(22px,3vw,36px);border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:22px}
+.case-meta h3{font-size:clamp(24px,2.6vw,30px);font-weight:800;letter-spacing:-.02em;margin-top:8px}
+.case-meta .desc{color:var(--ink-2);font-size:15.5px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px}
+.fact .l{font-size:12.5px;color:var(--ink-3)}
+.fact .v{font-family:var(--font-display);font-weight:700;font-size:22px;letter-spacing:-.015em;line-height:1.1;margin-top:2px}
+.fact .v.acc{color:var(--accent)}
+.fact .v.big{font-size:30px}
+.case-body{padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;gap:26px;min-width:0}
+.chart-title{font-size:13.5px;color:var(--ink-2);font-weight:600;margin-bottom:10px}
+.bar{display:flex;height:34px;gap:2px}
+.seg{position:relative;border-radius:2px;min-width:2px}
+.seg:first-child{border-radius:4px 2px 2px 4px}
+.seg:last-child{border-radius:2px 4px 4px 2px}
+.seg.c1{background:var(--cost-1)}.seg.c2{background:var(--cost-2)}.seg.c3{background:var(--cost-3)}.seg.pr{background:var(--accent)}
+.seg .tip{position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--ink);color:var(--bg);font-size:12.5px;padding:6px 9px;border-radius:4px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .12s;z-index:2}
+.seg:hover .tip,.seg:focus-visible .tip{opacity:1}
+.seg:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:12px;font-size:13px;color:var(--ink-2)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:7px;vertical-align:-1px;background:var(--sw)}
+.scale{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-3);margin-top:6px;font-variant-numeric:tabular-nums}
+
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+.tbl-wrap{overflow-x:auto}
+th,td{text-align:left;padding:8px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-weight:600;font-size:12.5px;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.total td{font-weight:700;border-bottom:2px solid var(--ink)}
+tr.profit td{font-weight:700;color:var(--accent);border-bottom:0}
+td.sub{color:var(--ink-2)}
+details summary{cursor:pointer;font-size:14px;color:var(--ink-2);font-weight:600;list-style:none;display:flex;align-items:center;gap:8px}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"+";font-family:var(--font-display);font-weight:700;width:18px;height:18px;border:1px solid var(--rule);border-radius:3px;display:inline-grid;place-items:center;font-size:14px;line-height:1}
+details[open] summary::before{content:"–"}
+details .tbl-wrap{margin-top:14px}
+
+/* Totals strip */
+.totals{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:clamp(28px,4vw,48px)}
+.totals .kpi .v{font-size:clamp(22px,2.6vw,30px)}
+
+/* Process */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.step .num{font-family:var(--font-display);font-weight:800;font-size:40px;color:var(--accent);letter-spacing:-.03em;line-height:1}
+.step h3{font-size:18px;font-weight:700;margin:12px 0 8px}
+.step p{color:var(--ink-2);font-size:15px}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(24px,4vw,56px);align-items:start}
+.contact h2{font-size:clamp(28px,3.6vw,44px);font-weight:800;letter-spacing:-.02em;margin-top:10px}
+.contact p{color:var(--ink-2);margin-top:16px;max-width:32em}
+.mail{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--rule);padding:14px 16px;margin-top:8px}
+.mail code{font-family:var(--font-body);font-size:16px;font-weight:600;user-select:all;word-break:break-all;min-width:0}
+.mail button{margin-left:auto;background:transparent;border:1px solid var(--rule);color:var(--ink);font:inherit;font-size:13.5px;font-weight:600;padding:7px 12px;border-radius:4px;cursor:pointer}
+.mail button:hover{border-color:var(--accent);color:var(--accent)}
+.mail button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.contact-side{display:flex;flex-direction:column;gap:12px}
+.contact-side .box{background:var(--surface);border:1px solid var(--rule);padding:18px 20px;font-size:15px;color:var(--ink-2)}
+.contact-side .box strong{color:var(--ink);display:block;font-family:var(--font-display);margin-bottom:4px}
+
+footer{border-top:1px solid var(--rule);padding-block:28px 40px;font-size:13px;color:var(--ink-3)}
+footer p+p{margin-top:8px}
+
+@media (max-width:860px){
+  .hero,.sec-head,.case,.contact{grid-template-columns:1fr}
+  .case-meta{border-right:0;border-bottom:1px solid var(--rule)}
+  .services{grid-template-columns:1fr}
+  .service{border-right:0;margin-right:0;border-bottom:1px solid var(--rule);padding-right:0}
+  .service:last-child{border-bottom:0}
+  .steps,.totals{grid-template-columns:1fr 1fr}
+}
+@media (max-width:480px){
+  .steps,.totals,.facts{grid-template-columns:1fr}
+  .nav ul{gap:14px;font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<style>img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">Carlos González Palau <span>·</span> Inversión Inmobiliaria</div>
+    <ul>
+      <li><a href="#servicios">Qué hago</a></li>
+      <li><a href="#operaciones">Operaciones</a></li>
+      <li><a href="#metodo">Método</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <p class="eyebrow">Compra, reforma y venta de vivienda</p>
+      <h1>Operaciones inmobiliarias de <em>alta rentabilidad</em>, con los números sobre la mesa.</h1>
+      <p class="lead">Invierto mi propio capital en inmuebles que el mercado no quiere mirar: situaciones complicadas, precios bajos y plazos cortos. Ahora acompaño a otros inversores a hacer lo mismo, desde la búsqueda hasta la escritura de venta.</p>
+      <a class="cta" href="#contacto">Hablemos de tu próxima operación</a>
+    </div>
+    <div class="kpis" aria-label="Resumen de resultados">
+      <div class="kpi"><div class="l">Operaciones cerradas</div><div class="v">2</div><div class="n">Compradas, reformadas y vendidas</div></div>
+      <div class="kpi"><div class="l">Beneficio antes de impuestos</div><div class="v acc">73.752 €</div><div class="n">Sobre 113.078 € invertidos</div></div>
+      <div class="kpi"><div class="l">Rentabilidad media anualizada</div><div class="v acc">114 %</div><div class="n">Antes de impuestos, ponderada por capital · operaciones de 6 y 8 meses</div></div>
+    </div>
+  </div>
+
+  <section id="servicios">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="eyebrow">Qué hago</p><h2>Te acompaño en toda la operación</h2></div>
+        <p>El dinero en este tipo de operaciones se gana en la compra, no en la venta. Por eso el trabajo empieza mucho antes de firmar: encontrar el inmueble adecuado, entender por qué está barato y saber exactamente cuánto va a costar sacarlo al mercado.</p>
+      </div>
+      <div class="services">
+        <div class="service">
+          <h3>Búsqueda y análisis</h3>
+          <p>Localizo oportunidades con descuento real sobre el precio de mercado, calculo la inversión total (ITP, notaría, registro, reforma, suministros) y la rentabilidad esperada antes de dar un solo paso.</p>
+        </div>
+        <div class="service">
+          <h3>Gestión de la compra y la reforma</h3>
+          <p>Negociación, arras, deudas de comunidad, escritura y coordinación de los oficios. Reformas ajustadas: lo justo para que el inmueble se venda rápido y bien.</p>
+        </div>
+        <div class="service">
+          <h3>Venta y cierre</h3>
+          <p>Certificado energético, publicación, visitas y negociación hasta la escritura de venta. Cada operación termina con una hoja de resultados como las que ves abajo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="operaciones">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="eyebrow">Operaciones realizadas</p><h2>Dos inmuebles, dos hojas de resultados</h2></div>
+        <p>Todos los importes son reales y están antes de impuestos sobre el beneficio, porque la fiscalidad depende de la situación de cada inversor. La inversión total incluye el precio de compra y todos los gastos de la operación.</p>
+      </div>
+
+      <div class="cases">
+
+        <!-- Operación 1 -->
+        <article class="case">
+          <div class="case-meta">
+            <div>
+              <p class="eyebrow">Operación 01 · 6 meses</p>
+              <h3>Calle Virgen del Carmen</h3>
+            </div>
+            <p class="desc">Vivienda adquirida por 30.000 €, muy por debajo de mercado. Reforma mínima (pintura y fontanería), alta de suministros y venta en seis meses por 75.000 €.</p>
+            <div class="facts">
+              <div class="fact"><div class="l">Inversión total</div><div class="v">39.430 €</div></div>
+              <div class="fact"><div class="l">Precio de venta</div><div class="v">75.000 €</div></div>
+              <div class="fact"><div class="l">Beneficio antes de impuestos</div><div class="v acc">35.570 €</div></div>
+              <div class="fact"><div class="l">Rentabilidad</div><div class="v acc">90,2 %</div></div>
+              <div class="fact"><div class="l">Rentabilidad anualizada</div><div class="v acc big">180,4 %</div></div>
+            </div>
+          </div>
+          <div class="case-body">
+            <div>
+              <div class="chart-title">De dónde sale cada euro del precio de venta</div>
+              <div class="bar" role="img" aria-label="Precio de venta 75.000 €: compra 30.000 €, impuestos y gastos 8.580 €, reforma y puesta a punto 850 €, beneficio 35.570 €">
+                <div class="seg c1" tabindex="0" style="flex:30000"><span class="tip">Precio de compra · 30.000 €</span></div>
+                <div class="seg c2" tabindex="0" style="flex:8580"><span class="tip">ITP, notaría, registro y otros gastos · 8.580 €</span></div>
+                <div class="seg c3" tabindex="0" style="flex:850"><span class="tip">Reforma · 850 €</span></div>
+                <div class="seg pr" tabindex="0" style="flex:35570"><span class="tip">Beneficio antes de impuestos · 35.570 €</span></div>
+              </div>
+              <div class="scale"><span>0 €</span><span>75.000 €</span></div>
+              <div class="legend">
+                <span style="--sw:var(--cost-1)">Compra</span>
+                <span style="--sw:var(--cost-2)">Impuestos y gastos</span>
+                <span style="--sw:var(--cost-3)">Reforma</span>
+                <span style="--sw:var(--accent)">Beneficio</span>
+              </div>
+            </div>
+            <details>
+              <summary>Desglose completo de la inversión</summary>
+              <div class="tbl-wrap">
+                <table>
+                  <thead><tr><th>Concepto</th><th class="num">Importe</th></tr></thead>
+                  <tbody>
+                    <tr><td>Precio de adquisición</td><td class="num">30.000,00 €</td></tr>
+                    <tr><td class="sub">ITP</td><td class="num">5.950,00 €</td></tr>
+                    <tr><td class="sub">Notaría compra</td><td class="num">1.116,21 €</td></tr>
+                    <tr><td class="sub">Pintar inmueble</td><td class="num">850,00 €</td></tr>
+                    <tr><td class="sub">Comisión cheque bancario</td><td class="num">120,00 €</td></tr>
+                    <tr><td class="sub">Alta de suministros</td><td class="num">250,00 €</td></tr>
+                    <tr><td class="sub">Coste de suministros</td><td class="num">100,00 €</td></tr>
+                    <tr><td class="sub">Certificado energético</td><td class="num">81,00 €</td></tr>
+                    <tr><td class="sub">Inscripción en el Registro</td><td class="num">285,84 €</td></tr>
+                    <tr><td class="sub">Fontanero</td><td class="num">70,00 €</td></tr>
+                    <tr><td class="sub">Gastos de comunidad</td><td class="num">120,00 €</td></tr>
+                    <tr><td class="sub">Notaría venta</td><td class="num">431,80 €</td></tr>
+                    <tr><td class="sub">Luz extra</td><td class="num">55,00 €</td></tr>
+                    <tr class="total"><td>Inversión total</td><td class="num">39.429,85 €</td></tr>
+                    <tr><td>Precio de venta</td><td class="num">75.000,00 €</td></tr>
+                    <tr><td class="sub">Plusvalía municipal</td><td class="num">0,00 €</td></tr>
+                    <tr class="profit"><td>Beneficio antes de impuestos</td><td class="num">35.570,15 €</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <!-- Operación 2 -->
+        <article class="case">
+          <div class="case-meta">
+            <div>
+              <p class="eyebrow">Operación 02 · 8 meses</p>
+              <h3>Avenida Castellón</h3>
+            </div>
+            <p class="desc">Vivienda con deuda de comunidad pendiente, adquirida por 59.520 €. La deuda se pagó con las arras, se hizo una reforma de 7.040 € y se vendió en ocho meses por 115.000 €.</p>
+            <div class="facts">
+              <div class="fact"><div class="l">Inversión total</div><div class="v">73.649 €</div></div>
+              <div class="fact"><div class="l">Precio de venta</div><div class="v">115.000 €</div></div>
+              <div class="fact"><div class="l">Beneficio antes de impuestos</div><div class="v acc">38.181 €</div></div>
+              <div class="fact"><div class="l">Rentabilidad</div><div class="v acc">51,8 %</div></div>
+              <div class="fact"><div class="l">Rentabilidad anualizada</div><div class="v acc big">77,8 %</div></div>
+            </div>
+          </div>
+          <div class="case-body">
+            <div>
+              <div class="chart-title">De dónde sale cada euro del precio de venta</div>
+              <div class="bar" role="img" aria-label="Precio de venta 115.000 €: compra 59.520 €, impuestos, gastos y deuda de comunidad 10.259 €, reforma 7.040 €, beneficio 38.181 €">
+                <div class="seg c1" tabindex="0" style="flex:59519.5"><span class="tip">Precio de compra · 59.519,50 €</span></div>
+                <div class="seg c2" tabindex="0" style="flex:10259.17"><span class="tip">ITP, notaría, registro, deuda de comunidad y otros gastos · 10.259,17 €</span></div>
+                <div class="seg c3" tabindex="0" style="flex:7039.9"><span class="tip">Reforma · 7.039,90 €</span></div>
+                <div class="seg pr" tabindex="0" style="flex:38181.43"><span class="tip">Beneficio antes de impuestos · 38.181,43 €</span></div>
+              </div>
+              <div class="scale"><span>0 €</span><span>115.000 €</span></div>
+              <div class="legend">
+                <span style="--sw:var(--cost-1)">Compra</span>
+                <span style="--sw:var(--cost-2)">Impuestos, gastos y deuda</span>
+                <span style="--sw:var(--cost-3)">Reforma</span>
+                <span style="--sw:var(--accent)">Beneficio</span>
+              </div>
+            </div>
+            <details>
+              <summary>Desglose completo de la inversión</summary>
+              <div class="tbl-wrap">
+                <table>
+                  <thead><tr><th>Concepto</th><th class="num">Importe</th></tr></thead>
+                  <tbody>
+                    <tr><td>Precio de adquisición</td><td class="num">59.519,50 €</td></tr>
+                    <tr><td class="sub">ITP</td><td class="num">5.356,71 €</td></tr>
+                    <tr><td class="sub">Reforma</td><td class="num">7.039,90 €</td></tr>
+                    <tr><td class="sub">Luz</td><td class="num">248,00 €</td></tr>
+                    <tr><td class="sub">Cristalería</td><td class="num">75,00 €</td></tr>
+                    <tr><td class="sub">Inscripción en el Registro</td><td class="num">784,00 €</td></tr>
+                    <tr><td class="sub">Publicación en portal inmobiliario</td><td class="num">161,80 €</td></tr>
+                    <tr><td class="sub">Notaría</td><td class="num">344,47 €</td></tr>
+                    <tr><td class="sub">Comunidad</td><td class="num">39,00 €</td></tr>
+                    <tr><td class="sub">Certificado energético</td><td class="num">80,19 €</td></tr>
+                    <tr class="total"><td>Inversión total</td><td class="num">73.648,57 €</td></tr>
+                    <tr><td>Precio de venta</td><td class="num">115.000,00 €</td></tr>
+                    <tr><td class="sub">Plusvalía municipal</td><td class="num">0,00 €</td></tr>
+                    <tr><td class="sub">Deuda de comunidad asumida (pagada con las arras)</td><td class="num">−3.170,00 €</td></tr>
+                    <tr class="profit"><td>Beneficio antes de impuestos</td><td class="num">38.181,43 €</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+        </article>
+      </div>
+
+      <div class="totals" aria-label="Totales de las dos operaciones">
+        <div class="kpi"><div class="l">Capital invertido</div><div class="v">113.078 €</div></div>
+        <div class="kpi"><div class="l">Volumen vendido</div><div class="v">190.000 €</div></div>
+        <div class="kpi"><div class="l">Beneficio antes de impuestos</div><div class="v acc">73.752 €</div></div>
+        <div class="kpi"><div class="l">Rentabilidad sobre el capital</div><div class="v acc">65,2 %</div><div class="n">En 14 meses acumulados de operación</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="metodo">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="eyebrow">Método</p><h2>Cómo trabajo una operación</h2></div>
+        <p>Cuatro fases, siempre en este orden. La mayoría de las oportunidades se descartan en la segunda: si los números no salen sobre el papel, no salen en la realidad.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><h3>Localizar</h3><p>Inmuebles con un motivo claro para estar baratos: deudas, herencias, prisa por vender, estado deficiente.</p></div>
+        <div class="step"><div class="num">2</div><h3>Calcular</h3><p>Inversión total con todos los gastos, precio de venta realista y plazo. Si la rentabilidad no compensa el riesgo, se descarta.</p></div>
+        <div class="step"><div class="num">3</div><h3>Ejecutar</h3><p>Negociación, arras, escritura y reforma ajustada al objetivo de venta. Sin gastar un euro que no vuelva multiplicado.</p></div>
+        <div class="step"><div class="num">4</div><h3>Vender y cerrar números</h3><p>Salida al mercado en semanas, no en meses. Al cerrar, una hoja de resultados con cada euro justificado.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="wrap contact">
+      <div>
+        <p class="eyebrow">Contacto</p>
+        <h2>¿Tienes capital y quieres una operación así?</h2>
+        <p>Cuéntame cuánto quieres invertir y en qué zona. Te digo con números si tiene sentido y cómo lo haríamos.</p>
+        <div class="mail">
+          <code id="mail-text">daniellosfablosdecastro@gmail.com</code>
+          <button type="button" id="copy-btn">Copiar</button>
+        </div>
+      </div>
+      <div class="contact-side">
+        <div class="box"><strong>Para quién es</strong>Inversores particulares que quieren rentabilidades muy por encima del alquiler tradicional y aceptan que una operación así exige dedicación y tolerancia al riesgo.</div>
+        <div class="box"><strong>Qué te llevas</strong>Análisis previo con todos los números, gestión de la operación de principio a fin y una hoja de resultados al cierre, como las de arriba.</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Rentabilidades calculadas sobre la inversión total (precio de compra más todos los gastos de la operación) y antes de impuestos sobre el beneficio. La rentabilidad anualizada se obtiene de forma simple: rentabilidad de la operación × 12 / meses de duración.</p>
+    <p>Resultados pasados no garantizan resultados futuros. Toda inversión inmobiliaria conlleva riesgo, incluida la posible pérdida del capital invertido.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('copy-btn'),txt=document.getElementById('mail-text');
+  if(!btn||!txt)return;
+  btn.addEventListener('click',function(){
+    var v=txt.textContent;
+    function done(ok){btn.textContent=ok?'Copiado':'Selecciona y copia';setTimeout(function(){btn.textContent='Copiar'},1800)}
+    function fallback(){try{var r=document.createRange();r.selectNodeContents(txt);var s=window.getSelection();s.removeAllRanges();s.addRange(r)}catch(e){}done(false)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(v).then(function(){done(true)},fallback)}else{fallback()}
+  });
+})();
+</script>
+</body>
+</html>
