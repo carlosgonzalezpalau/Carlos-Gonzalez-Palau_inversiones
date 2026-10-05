@@ -148,11 +148,22 @@ details .tbl-wrap{margin-top:14px}
 .contact-side .box{background:var(--surface);border:1px solid var(--rule);padding:18px 20px;font-size:15px;color:var(--ink-2)}
 .contact-side .box strong{color:var(--ink);display:block;font-family:var(--font-display);margin-bottom:4px}
 
+/* FAQ */
+.faq{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(16px,4vw,48px)}
+.faq-list{border-top:1px solid var(--rule)}
+.faq-list details{border-bottom:1px solid var(--rule)}
+.faq-list summary{padding:18px 0;font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--ink);gap:14px;align-items:flex-start}
+.faq-list summary::before{flex:none;margin-top:3px;width:22px;height:22px;font-size:16px;color:var(--accent);border-color:var(--accent)}
+.faq-list summary:hover{color:var(--accent)}
+.faq-list summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.faq-list .a{padding:0 0 22px 36px;color:var(--ink-2);font-size:16px;max-width:38em}
+.faq-list .a p+p{margin-top:10px}
 footer{border-top:1px solid var(--rule);padding-block:28px 40px;font-size:13px;color:var(--ink-3)}
 footer p+p{margin-top:8px}
 
 @media (max-width:860px){
-  .hero,.sec-head,.case,.contact,.kpis{grid-template-columns:1fr}
+  .hero,.sec-head,.case,.contact,.kpis,.faq{grid-template-columns:1fr}
+  .faq-list .a{padding-left:0}
   .hero-photo{justify-self:start;max-width:320px}
   .case-meta{border-right:0;border-bottom:1px solid var(--rule)}
   .services{grid-template-columns:1fr}
@@ -176,6 +187,7 @@ footer p+p{margin-top:8px}
       <li><a href="#como-funciona">Cómo funciona</a></li>
       <li><a href="#operaciones">Operaciones</a></li>
       <li><a href="#metodo">Método</a></li>
+      <li><a href="#preguntas">Preguntas</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </div>
@@ -383,6 +395,68 @@ footer p+p{margin-top:8px}
         <div class="step"><div class="num">2</div><h3>Calcular</h3><p>Inversión total con todos los gastos, precio de venta realista y plazo. Si la rentabilidad no compensa el riesgo, se descarta.</p></div>
         <div class="step"><div class="num">3</div><h3>Ejecutar</h3><p>Negociación, arras, escritura y reforma ajustada al objetivo de venta. Sin gastar un euro que no vuelva multiplicado.</p></div>
         <div class="step"><div class="num">4</div><h3>Vender y repartir</h3><p>Salida al mercado en semanas, no en meses. Al cerrar, cada inversor recibe su parte del beneficio y una hoja de resultados con cada euro justificado.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="preguntas">
+    <div class="wrap faq">
+      <div>
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2 style="font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-.02em;margin-top:10px">Lo que suele preguntar quien va a invertir por primera vez</h2>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>¿Qué es un contrato de cuentas en participación?</summary>
+          <div class="a">
+            <p>Es un contrato recogido en el Código de Comercio desde hace más de un siglo. Tú aportas capital a una operación concreta que gestiono yo en mi nombre, y a cambio participas en el resultado de esa operación en la proporción que fija el contrato.</p>
+            <p>No creas una sociedad ni apareces en la escritura del inmueble. Tu compromiso se limita a lo que aportas y queda todo por escrito: cuánto pones, qué porcentaje te corresponde y cómo se liquida al vender.</p>
+          </div>
+        </details>
+        <details>
+          <summary>¿Cuánto puedo invertir?</summary>
+          <div class="a">
+            <p>Desde 2.000 €. El máximo depende de cada operación: una vivienda de 40.000 € de inversión total admite menos capital que una de 80.000 €. Antes de abrir cada operación te digo cuánto capital se necesita y cuánto entra.</p>
+          </div>
+        </details>
+        <details>
+          <summary>¿Cómo se reparte el beneficio?</summary>
+          <div class="a">
+            <p>En proporción a lo que aporta cada uno sobre la inversión total de la operación. Si una operación necesita 50.000 € y tú pones 5.000 €, te corresponde el 10 % del resultado, según lo fijado en el contrato.</p>
+            <p>El reparto se hace al vender, con la hoja de resultados delante: precio de venta, todos los gastos y beneficio final. Como las dos que ves en esta página.</p>
+          </div>
+        </details>
+        <details>
+          <summary>¿Cuándo recupero mi capital?</summary>
+          <div class="a">
+            <p>Al cerrar la operación, es decir, cuando se firma la venta del inmueble. Mis dos operaciones han durado 6 y 8 meses; lo normal es moverse entre 6 y 12 meses. Durante ese tiempo el dinero está en el inmueble y no se puede retirar, así que invierte solo lo que no vayas a necesitar en ese plazo.</p>
+          </div>
+        </details>
+        <details>
+          <summary>¿Qué riesgo tengo?</summary>
+          <div class="a">
+            <p>El de cualquier inversión inmobiliaria: que la venta tarde más de lo previsto, que aparezcan gastos no contemplados o que el precio de venta sea menor que el esperado. En el peor de los casos puedes perder parte o la totalidad del capital aportado.</p>
+            <p>Lo que hago para reducirlo: comprar muy por debajo del precio de mercado, calcular todos los gastos antes de entrar y poner mi propio dinero en cada operación. Si sale mal, pierdo contigo.</p>
+          </div>
+        </details>
+        <details>
+          <summary>¿Cómo sé en qué se invierte mi dinero?</summary>
+          <div class="a">
+            <p>Cada operación es un inmueble concreto, con dirección. Antes de aportar ves el precio de compra, el presupuesto de reforma, los gastos de la operación, el precio de venta objetivo y el plazo. Durante la operación te mantengo informado de cada paso y al cierre recibes la hoja de resultados completa.</p>
+          </div>
+        </details>
+        <details>
+          <summary>¿Qué impuestos pago por el beneficio?</summary>
+          <div class="a">
+            <p>Depende de la situación de cada inversor, por eso todas las rentabilidades de esta web están antes de impuestos. Como orientación, el beneficio que recibes tributa en tu IRPF. Te recomiendo confirmarlo con tu asesor antes de invertir.</p>
+          </div>
+        </details>
+        <details>
+          <summary>¿Cómo empiezo?</summary>
+          <div class="a">
+            <p>Escríbeme con el importe que quieres invertir. Cuando tenga la siguiente operación que pase el filtro, te la presento con todos los números. Si te convence, firmamos el contrato de cuentas en participación y entras.</p>
+          </div>
+        </details>
       </div>
     </div>
   </section>
